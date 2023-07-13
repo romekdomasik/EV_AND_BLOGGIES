@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.evaland2_bloggies.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_facebookFragment"
+            app:destination="@id/facebookFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_bloggiesFragment"
+            app:destination="@id/bloggiesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/connectedFragment"
+        android:name="com.example.evaland2_bloggies.ConnectedFragment"
+        android:label="fragment_connected"
+        tools:layout="@layout/fragment_connected" />
+    <fragment
+        android:id="@+id/facebookFragment"
+        android:name="com.example.evaland2_bloggies.FacebookFragment"
+        android:label="fragment_facebook"
+        tools:layout="@layout/fragment_facebook" >
+        <action
+            android:id="@+id/action_facebookFragment_to_connectedFragment"
+            app:destination="@id/connectedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/connectedTwitterFragment"
+        android:name="com.example.evaland2_bloggies.ConnectedTwitterFragment"
+        android:label="fragment_connected_twitter"
+        tools:layout="@layout/fragment_connected_twitter" />
+    <fragment
+        android:id="@+id/twitterFragment"
+        android:name="com.example.evaland2_bloggies.TwitterFragment"
+        android:label="fragment_twitter"
+        tools:layout="@layout/fragment_twitter" >
+        <action
+            android:id="@+id/action_twitterFragment_to_connectedTwitterFragment"
+            app:destination="@id/connectedTwitterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bloggiesFragment"
+        android:name="com.example.evaland2_bloggies.BloggiesFragment"
+        android:label="fragment_bloggies"
+        tools:layout="@layout/fragment_bloggies" >
+        <action
+            android:id="@+id/action_bloggiesFragment_to_bloCoFragment"
+            app:destination="@id/bloCoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/bloCoFragment"
+        android:name="com.example.evaland2_bloggies.BloCoFragment"
+        android:label="fragment_blo_co"
+        tools:layout="@layout/fragment_blo_co" >
+        <argument
+            android:name="message"
+            app:argType="string" />
+    </fragment>
+</navigation>
